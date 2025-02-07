@@ -30,7 +30,7 @@ git clone https://github.com/your-username/MyU-Result-Checker.git
 cd MyU-Result-Checker
 
 ### 2️⃣ Edit login credentials
-Replace USERNAME and PASSWORD with your MyU credentials (⚠️ Do not share your credentials publicly!).
+Replace MyU_username and MyU_password with your MyU credentials (⚠️ Do not share your credentials publicly!).
 
 ### 3️⃣ Run the script
 python myu_checker.py
