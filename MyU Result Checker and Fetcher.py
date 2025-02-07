@@ -5,15 +5,25 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
 
-# Configure Chrome options
-chrome_options = Options()
-chrome_options.add_argument("--headless")  # Run Chrome in headless mode
-chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (helps in some cases)
-chrome_options.add_argument("--window-size=1920x1080")  # Optional: Set window size for proper element detection
-chrome_options.add_argument("--disable-blink-features=AutomationControlled")  # Prevent detection as a bot
+# Uncomment the following lines if you want to see what is going in the background in the browser window
 
-# Setup WebDriver
-driver = webdriver.Chrome(options=chrome_options)
+# # Configure Chrome options
+# chrome_options = Options()
+# chrome_options.add_argument("--headless")  # Run Chrome in headless mode
+# chrome_options.add_argument("--disable-gpu")  # Disable GPU acceleration (helps in some cases)
+# chrome_options.add_argument("--window-size=1920x1080")  # Optional: Set window size for proper element detection
+# chrome_options.add_argument("--disable-blink-features=AutomationControlled")  # Prevent detection as a bot
+
+# # Setup WebDriver
+# driver = webdriver.Chrome(options=chrome_options)
+
+driver = webdriver.Chrome()
+
+
+# MyU credentials (Replace them with your own credentials)
+MyU_username = ""
+MyU_password = ""
+
 
 # Open MyU website
 driver.get("https://myu.mans.edu.eg/")
@@ -23,12 +33,12 @@ wait = WebDriverWait(driver, 20)
 
 # Enter username
 username_input = wait.until(EC.presence_of_element_located((By.NAME, "txtUserName")))
-username_input.send_keys("your_username") # --> Enter your username here instead of your_username <--
+username_input.send_keys(f"{MyU_username}")
 print("Entered username")
 
 # Enter password
 password_input = driver.find_element(By.NAME, "txtPassword")
-password_input.send_keys("your_password")  # --> Enter your password here instead of your_password <--
+password_input.send_keys(f"{MyU_password}")
 print("Entered password")
 
 # Click the login button
@@ -72,6 +82,8 @@ for row in rows:
 # If no results were found, print a warning message
 if not results_found:
     print("\n⚠️ The result did not appear yet.")
+
+# Uncomment the following lines if you want the browser window be not closed automatically
 
 # # Keep browser open for review
 # print("\nProcess completed. The browser will remain open.")
