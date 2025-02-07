@@ -29,7 +29,7 @@ Make sure the WebDriver matches your browser version!
 git clone https://github.com/your-username/MyU-Result-Checker.git
 cd MyU-Result-Checker
 
-### 2️⃣ Edit config.py (Optional)
+### 2️⃣ Edit login credentials
 Replace USERNAME and PASSWORD with your MyU credentials (⚠️ Do not share your credentials publicly!).
 
 ### 3️⃣ Run the script
