@@ -1,3 +1,8 @@
+# MyU credentials (Replace them with your own credentials)
+MyU_username = ""
+MyU_password = ""
+
+
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -18,12 +23,6 @@ import time
 # driver = webdriver.Chrome(options=chrome_options)
 
 driver = webdriver.Chrome()
-
-
-# MyU credentials (Replace them with your own credentials)
-MyU_username = ""
-MyU_password = ""
-
 
 # Open MyU website
 driver.get("https://myu.mans.edu.eg/")
